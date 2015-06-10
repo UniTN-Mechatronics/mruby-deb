@@ -1,6 +1,6 @@
 #!/bin/bash
 VERSION=$(date +"%y.%m.%d")
-PATCHLEVEL=`(cd mruby; git rev-parse --short HEAD)`
+PATCHLEVEL=`(git rev-parse --short HEAD)`
 SOURCE_BIN=./mruby/bin
 
 echo "Building deb package for version $VERSION-$PATCHLEVEL"
