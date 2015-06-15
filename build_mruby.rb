@@ -8,6 +8,8 @@ if __FILE__ == $PROGRAM_NAME
   exit system(%Q[cd mruby; MRUBY_CONFIG=#{File.expand_path __FILE__} ./minirake #{ARGV.join(' ')}])
 end
 
+puts "*** USING CUSTOM MRUBY CONFIG #{__FILE__} ***"
+
 MRuby::Build.new do |conf|
   toolchain :gcc
   conf.gembox 'default'
@@ -33,5 +35,7 @@ MRuby::Build.new do |conf|
   conf.gem :github => 'UniTN-Mechatronics/mruby-fsm', :branch => 'master'
   conf.gem :github => 'UniTN-Mechatronics/mruby-kalman', :branch => 'master'
   conf.gem :github => 'UniTN-Mechatronics/mruby-mrubot', :branch => 'master'
+  conf.gem :github => "UniTN-Mechatronics/mruby-raspicam", :branch => 'master'
+  #conf.gem :github => "take-cheeze/mruby-marshal"
   conf.gem :github => 'pbosetti/mruby-emb-require', :branch => 'master'
 end
