@@ -29,6 +29,7 @@ MRuby::Build.new do |conf|
   conf.gem :github => 'iij/mruby-pack', :branch => 'master'
   conf.gem :github => 'iij/mruby-socket', :branch => 'master'
   conf.gem :github => 'iij/mruby-errno', :branch => 'master'
+  conf.gem :github => "ksss/mruby-signal"
   conf.gem :github => 'mattn/mruby-thread', :branch => 'master'
   conf.gem :github => 'UniTN-mechatronics/mruby-ftp', :branch => 'master'
   conf.gem :github => 'UniTN-mechatronics/mruby-raspberry', :branch => 'master'
