@@ -24,7 +24,6 @@ MRuby::Build.new do |conf|
   conf.gem :github => 'pbosetti/mruby-complex', :branch => 'master'
   conf.gem :github => 'pbosetti/mruby-serialport', :branch => 'master'
   conf.gem :github => 'pbosetti/mruby-shell', :branch => 'master'
-  conf.gem :github => 'pbosetti/mruby-sleep', :branch => 'master'
   conf.gem :github => 'iij/mruby-pack', :branch => 'master'
   conf.gem :github => 'iij/mruby-socket', :branch => 'master'
   conf.gem :github => 'iij/mruby-errno', :branch => 'master'
