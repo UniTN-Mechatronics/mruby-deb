@@ -12,6 +12,7 @@ puts "*** USING CUSTOM MRUBY CONFIG #{__FILE__} ***"
 
 MRuby::Build.new do |conf|
   toolchain :gcc
+  enable_debug
   conf.gembox 'default'
   conf.cc.defines += %w(ENABLE_READLINE)
   conf.gem "mruby/mrbgems/mruby-time"
@@ -35,6 +36,9 @@ MRuby::Build.new do |conf|
   conf.gem :github => 'UniTN-Mechatronics/mruby-fsm', :branch => 'master'
   conf.gem :github => 'UniTN-Mechatronics/mruby-kalman', :branch => 'master'
   conf.gem :github => 'UniTN-Mechatronics/mruby-mrubot', :branch => 'master'
-  conf.gem :github => 'UniTN-Mechatronics/mruby-raspicam', :branch => 'master'
-  conf.gem :github => 'pbosetti/mruby-emb-require', :branch => 'master'
+  # The following is HIGHLY EXPERIMENTAL
+  # before building, cd to mruby/build/mrbgems/mruby-raspicam/lib and do
+  # make and sudo make install.
+  # conf.gem :github => 'UniTN-Mechatronics/mruby-raspicam', :branch => 'master'
+  conf.gem :github => 'mattn/mruby-require', :branch => 'master'
 end
