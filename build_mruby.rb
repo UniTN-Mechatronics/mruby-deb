@@ -21,7 +21,6 @@ MRuby::Build.new do |conf|
   conf.gem :github => 'pbosetti/mruby-tempfile', :branch => 'master'
   conf.gem :github => 'pbosetti/mruby-pcre-regexp', :branch => 'master'
   conf.gem :github => 'pbosetti/mruby-yaml', :branch => 'master'
-  conf.gem :github => 'pbosetti/mruby-merb', :branch => 'master'
   conf.gem :github => 'pbosetti/mruby-complex', :branch => 'master'
   conf.gem :github => 'pbosetti/mruby-serialport', :branch => 'master'
   conf.gem :github => 'pbosetti/mruby-shell', :branch => 'master'
@@ -30,7 +29,6 @@ MRuby::Build.new do |conf|
   conf.gem :github => 'iij/mruby-errno', :branch => 'master'
   conf.gem :github => 'iij/mruby-process', :branch => 'master'
   conf.gem :github => 'ksss/mruby-signal', :branch => 'master'
-  conf.gem :github => 'mattn/mruby-thread', :branch => 'master'
   conf.gem :github => 'UniTN-mechatronics/mruby-ftp', :branch => 'master'
   conf.gem :github => 'UniTN-mechatronics/mruby-raspberry', :branch => 'master'
   conf.gem :github => 'UniTN-Mechatronics/mruby-fsm', :branch => 'master'
@@ -40,5 +38,19 @@ MRuby::Build.new do |conf|
   # before building, cd to mruby/build/mrbgems/mruby-raspicam/lib and do
   # make and sudo make install.
   # conf.gem :github => 'UniTN-Mechatronics/mruby-raspicam', :branch => 'master'
-  conf.gem :github => 'mattn/mruby-require', :branch => 'master'
+  
+  # Gems added AFTER this mruby-require will be compiled as .so files
+  # and can be required at runtime. The interpreter will search for them
+  # under /usr/lib/mruby
+  conf.gem :github => 'mattn/mruby-require', :branch => 'master' do |spec|
+    spec.cc.flags.flatten!
+    p spec.cc.flags
+    spec.cc.flags.delete_if {|e| e.match "MRBGEMS_ROOT"}
+    spec.cc.flags << "-DMRBGEMS_ROOT=\\\"/usr/lib/mruby\\\""
+    p spec.cc.flags
+  end
+  
+  # For using the followings, issue require 'mruby-merb' et similia
+  conf.gem :github => 'pbosetti/mruby-merb', :branch => 'master'
+  conf.gem :github => 'mattn/mruby-thread', :branch => 'master'
 end
