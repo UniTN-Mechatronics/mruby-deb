@@ -32,7 +32,7 @@ Version: $VERSION-p$PATCHLEVEL
 Section: base
 Priority: optional
 Architecture: armhf
-Depends: libc6, libreadline6, libssl1.0.0, libpcre3, libyaml-0-2, i2c-tools, libi2c-dev, libopencv-core2.4, libopencv-core-dev, libopencv-dev
+Depends: libc6, libreadline6, libssl1.0.0, libpcre3, libyaml-0-2, i2c-tools, libi2c-dev, libopencv-core2.4, libopencv-core-dev, libopencv-dev, libgsl0ldbl, libgsl0-dev, wiringpi
 Maintainer: Paolo Bosetti <paolo.bosetti@unitn.it>
 Description: mruby for for robotics on Raspberry PI. Please remember to install wiringPi" > spool/DEBIAN/control
 echo

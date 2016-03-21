@@ -36,12 +36,14 @@ MRuby::Build.new do |conf|
   conf.gem :github => 'iij/mruby-errno',                    :branch => 'master'
   conf.gem :github => 'iij/mruby-process',                  :branch => 'master'
   conf.gem :github => 'ksss/mruby-signal',                  :branch => 'master'
+  conf.gem :github => 'mattn/mruby-sinatic',                :branch => 'master'
   conf.gem :github => 'UniTN-mechatronics/mruby-ftp',       :branch => 'master'
   conf.gem :github => 'UniTN-mechatronics/mruby-raspberry', :branch => 'master'
   conf.gem :github => 'UniTN-Mechatronics/mruby-fsm',       :branch => 'master'
   conf.gem :github => 'UniTN-Mechatronics/mruby-kalman',    :branch => 'master'
   conf.gem :github => 'UniTN-Mechatronics/mruby-mrubot',    :branch => 'master'
-  conf.gem :github => 'UniTN-Mechatronics/mruby-gsl'    , :branch => 'master'
+  conf.gem :github => 'UniTN-Mechatronics/mruby-gsl',       :branch => 'master'
+  
   #
   # # The following is HIGHLY EXPERIMENTAL
   # # before building, cd to mruby/build/mrbgems/mruby-raspicam/lib and do
