@@ -5,7 +5,12 @@ Dirty simple compile and build solution for creating a .deb package for mruby su
 A standard Ruby (>=1.9) install is required for building mruby. In addition, the following deb packages are used by the set of mruby gems:
 
 ```sh
-sudo apt-get install libreadline6 libssl1.0.0 libpcre3 libyaml-0-2 i2c-tools libi2c-dev libopencv-core2.4 libopencv-core-dev libopencv-dev
+sudo apt-get install libssl1.0.0 i2c-tools libi2c-dev \
+     libopencv-core2.4 libopencv-core-dev libopencv-dev \
+     automake libtool libgsl0-dev libgsl0ldbl libgsl0-dbg \
+     libreadline6 libreadline6-dev libreadline6-dbg \
+     libpcre3 libpcre3-dev libpcre3-dbg \
+     libyaml-0-2 libyaml-0-2-dbg
 ```
 
 Furthermore, the [wiringpi library v2](http://wiringpi.com) needs to be installed before using this mruby-gem. See the website for building instructions.
